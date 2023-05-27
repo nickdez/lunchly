@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Top Customers{% endblock %}
+
+{% block content %}
+<h1>Top Customers</h1>
+
+{% if topCustomers %}
+<ol>
+    {% for customer in topCustomers %}
+    <h4>
+        <li>{{ customer.fullName() }}</li>
+    </h4>
+    {% endfor %}
+</ol>
+{% else %}
+<p>No results found.</p>
+{% endif %}
+
+{% endblock %}
